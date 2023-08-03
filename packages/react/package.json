@@ -8,15 +8,18 @@
   "scripts": {
     "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
     "dev": "tsup src/index.tsx --format esm,cjs --dts --external react --watch",
-    "lint": "eslint src/**/*.ts* --fix"
+    "lint": "eslint src/**/*.tsx --fix"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@dxwebster-ds/eslint-config": "*",
     "@dxwebster-ds/tokens": "*",
     "@dxwebster-ds/ts-config": "*",
-    "@dxwebster-ds/eslint-config": "*",
+    "@types/react": "^18.2.18",
+    "@types/react-dom": "^18.2.7",
+    "react": "^18.2.0",
     "tsup": "^7.1.0",
     "typescript": "^5.1.6"
   }
