@@ -1,5 +1,3 @@
-// ECMAscript modules (ESM .mjs)
-
 // src/colors.ts
 var colors = {
   white: "#FFF",
