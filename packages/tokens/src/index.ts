@@ -15,3 +15,19 @@ export * from "./line-heights"
 // opacity
 // box-shadow
 // animations
+
+// pacote tsup
+/**
+ * pacote tsup
+ *
+ * converte o TS tanto pra JS quanto para ECMScript mais moderno
+ * para aplicações que usam qlr versao do js
+ * definiçao de tipagem
+ * performático, usa o ESbuild que esta por tras do vite
+ */
+
+/**
+ * Monorepo (conceito)
+ * varios projetos em uma unica pasta
+ * Projetos que são dependentes entre si
+ */
