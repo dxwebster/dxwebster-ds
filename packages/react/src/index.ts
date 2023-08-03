@@ -1,3 +1,3 @@
-import { colors } from "@dxwebster-ds/tokens"
+import { colors } from '@dxwebster-ds/tokens'
 
-console.log("✅ ~ colors:", colors)
+console.log('✅ ~ colors:', colors)
