@@ -1,4 +1,4 @@
-/* src/components/Header/header.css */
+/* src/components/Header/styles.css */
 .storybook-header {
   font-family:
     "Nunito Sans",
@@ -33,12 +33,13 @@
   margin-right: 10px;
 }
 
-/* src/styles/tokens-grid.css */
+/* src/components/TokensGrid/styles.css */
 .tokens-grid {
   width: 100%;
   font-family: sans-serif;
   color: #FFF;
   border-collapse: collapse;
+  background-color: red;
 }
 .tokens-grid thead th {
   padding: 0.75rem 1rem;

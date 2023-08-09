@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-import './header.css'
+import './styles.css'
 import { Button } from '../Button'
 
 const Header = ({ user, onLogin, onLogout, onCreateAccount }: any) => (
@@ -36,12 +36,12 @@ const Header = ({ user, onLogin, onLogout, onCreateAccount }: any) => (
             <span className="welcome">
               Welcome, <b>{user.name}</b>!
             </span>
-            <Button variant='primary' value='Log out'/>
+            <Button variant="primary" value="Log out" />
           </>
         ) : (
           <>
-            <Button variant='secondary' value='Log in' />
-            <Button variant='secondary' value="Sign up" />
+            <Button variant="secondary" value="Log in" />
+            <Button variant="secondary" value="Sign up" />
           </>
         )}
       </div>
