@@ -28,10 +28,9 @@
     "vite": "^4.4.9"
   },
     "dependencies": {
-    "@dxwebster-ds/eslint-config": "*",
     "@dxwebster-ds/react": "*",
     "@dxwebster-ds/tokens": "*",
-    "@dxwebster-ds/ts-config": "*",
+    "@dxwebster-ds/config": "*",
     "@storybook/addon-a11y": "^6.5.12",
     "phosphor-react": "^1.4.1",
     "polished": "^4.2.2",
