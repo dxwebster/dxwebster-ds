@@ -1,6 +1,8 @@
 import * as _stitches_react_types_styled_component from '@stitches/react/types/styled-component';
 import * as _stitches_react_types_css_util from '@stitches/react/types/css-util';
 import { ComponentProps, ElementType } from 'react';
+import * as react_jsx_runtime from 'react/jsx-runtime';
+import PropTypes from 'prop-types';
 
 declare const Box: _stitches_react_types_styled_component.StyledComponent<"div", {}, {}, _stitches_react_types_css_util.CSS<{}, {
     colors: {
@@ -209,6 +211,38 @@ interface BoxProps extends ComponentProps<typeof Box> {
     as?: ElementType;
 }
 
+declare const Button: {
+    ({ primary, backgroundColor, size, label, ...props }: any): react_jsx_runtime.JSX.Element;
+    propTypes: {
+        primary: PropTypes.Requireable<boolean>;
+        backgroundColor: PropTypes.Requireable<string>;
+        size: PropTypes.Requireable<string>;
+        label: PropTypes.Validator<string>;
+        onClick: PropTypes.Requireable<(...args: any[]) => any>;
+    };
+    defaultProps: {
+        backgroundColor: null;
+        primary: boolean;
+        size: string;
+        onClick: undefined;
+    };
+};
+
+declare const Header: {
+    ({ user, onLogin, onLogout, onCreateAccount }: any): react_jsx_runtime.JSX.Element;
+    propTypes: {
+        user: PropTypes.Requireable<PropTypes.InferProps<{
+            name: PropTypes.Validator<string>;
+        }>>;
+        onLogin: PropTypes.Validator<(...args: any[]) => any>;
+        onLogout: PropTypes.Validator<(...args: any[]) => any>;
+        onCreateAccount: PropTypes.Validator<(...args: any[]) => any>;
+    };
+    defaultProps: {
+        user: null;
+    };
+};
+
 declare const Text: _stitches_react_types_styled_component.StyledComponent<"p", {}, {}, _stitches_react_types_css_util.CSS<{}, {
     colors: {
         white: string;
@@ -416,4 +450,4 @@ interface TextProps extends ComponentProps<typeof Text> {
     as?: ElementType;
 }
 
-export { Box, BoxProps, Text, TextProps };
+export { Box, BoxProps, Button, Header, Text, TextProps };

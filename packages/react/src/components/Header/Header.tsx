@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 
-import { Button } from '../button'
 import './header.css'
+import { Button } from '../Button'
 
-const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
+const Header = ({ user, onLogin, onLogout, onCreateAccount }: any) => (
   <header>
     <div className="storybook-header">
       <div>

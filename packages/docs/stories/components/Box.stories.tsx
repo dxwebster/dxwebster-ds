@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Box, TextProps, Text } from '@dxwebster-ds/react'
 
 export default {
-  title: 'Surfaces/Box',
+  title: 'Layout/Box',
   component: Box,
   args: {
     children: <Text>Testando o elemento Box</Text>,
