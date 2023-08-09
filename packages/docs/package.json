@@ -2,7 +2,6 @@
   "name": "@dxwebster-ds/docs",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "storybook dev -p 6006",
@@ -30,7 +29,7 @@
     "dependencies": {
     "@dxwebster-ds/react": "*",
     "@dxwebster-ds/tokens": "*",
-    "@dxwebster-ds/config": "*",
+    "@dxwebster-ds/configs": "*",
     "@storybook/addon-a11y": "^6.5.12",
     "phosphor-react": "^1.4.1",
     "polished": "^4.2.2",

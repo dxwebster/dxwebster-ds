@@ -14,9 +14,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@dxwebster-ds/eslint-config": "*",
+    "@dxwebster-ds/configs": "*",
     "@dxwebster-ds/tokens": "*",
-    "@dxwebster-ds/ts-config": "*",
     "@types/react": "^18.2.18",
     "@types/react-dom": "^18.2.7",
     "react": "^18.2.0",

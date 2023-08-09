@@ -14,8 +14,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@dxwebster-ds/ts-config": "*",
-    "@dxwebster-ds/eslint-config": "*",
+    "@dxwebster-ds/configs": "*",
     "tsup": "^7.1.0",
     "typescript": "^5.1.6"
   }
