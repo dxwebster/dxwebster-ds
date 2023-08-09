@@ -1,5 +1,9 @@
-import { colors } from '@dxwebster-ds/tokens'
+import { styled } from './styles'
 
-export function App() {
-  return <h1 style={{ color: colors.ignite300 }}>Hello World</h1>
-}
+// usa a function styled que retorna os tokens configurados pelo stitches
+export const Button = styled('button', {
+  fontFamily: '$default',
+  backgroundColor: '$ignite500',
+  borderRadius: '$md',
+  padding: '$4',
+})

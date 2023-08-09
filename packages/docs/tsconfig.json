@@ -1,0 +1,4 @@
+{
+  "extends": "@dxwebster-ds/ts-config/react.json",
+  "include": ["src"]
+}
