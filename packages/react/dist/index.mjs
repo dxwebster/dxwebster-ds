@@ -1801,7 +1801,7 @@ function ColorsGrid() {
 // src/components/TokensGrid/TokensGrid.tsx
 import { jsx as jsx3, jsxs as jsxs3 } from "react/jsx-runtime";
 function TokensGrid({ tokens, hasRemValue = false }) {
-  return /* @__PURE__ */ jsxs3("table", { className: "sb-unstyled tokens-grid", children: [
+  return /* @__PURE__ */ jsxs3("table", { className: "tokens-grid", children: [
     /* @__PURE__ */ jsx3("thead", { children: /* @__PURE__ */ jsxs3("tr", { children: [
       /* @__PURE__ */ jsx3("th", { children: "Name" }),
       /* @__PURE__ */ jsx3("th", { children: "Value" }),

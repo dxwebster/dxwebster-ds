@@ -1819,7 +1819,7 @@ function ColorsGrid() {
 // src/components/TokensGrid/TokensGrid.tsx
 var import_jsx_runtime3 = require("react/jsx-runtime");
 function TokensGrid({ tokens, hasRemValue = false }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("table", { className: "sb-unstyled tokens-grid", children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("table", { className: "tokens-grid", children: [
     /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("thead", { children: /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("tr", { children: [
       /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("th", { children: "Name" }),
       /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("th", { children: "Value" }),
