@@ -26,5 +26,16 @@
     "react-dom": "^18.2.0",
     "storybook": "^7.2.1",
     "vite": "^4.4.9"
+  },
+    "dependencies": {
+    "@dxwebster-ds/eslint-config": "*",
+    "@dxwebster-ds/react": "*",
+    "@dxwebster-ds/tokens": "*",
+    "@dxwebster-ds/ts-config": "*",
+    "@storybook/addon-a11y": "^6.5.12",
+    "phosphor-react": "^1.4.1",
+    "polished": "^4.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
