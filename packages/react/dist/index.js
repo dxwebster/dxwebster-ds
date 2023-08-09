@@ -1002,7 +1002,8 @@ __export(src_exports, {
   Button: () => Button,
   ColorsGrid: () => ColorsGrid,
   Header: () => Header,
-  Text: () => Text
+  Text: () => Text,
+  TokensGrid: () => TokensGrid
 });
 module.exports = __toCommonJS(src_exports);
 
@@ -1794,7 +1795,7 @@ function getContrast(color1, color2) {
 // src/components/ColorsGrid/ColorsGrid.tsx
 var import_jsx_runtime2 = require("react/jsx-runtime");
 function ColorsGrid() {
-  const constrast = (color) => getContrast(color, "#FFF") < 3.5 ? "#000" : "#FFF";
+  const constrast = (color) => getContrast(color, "#FFF") < 3.5 ? colors.black : colors.white;
   return Object.entries(colors).map(([key, color]) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { backgroundColor: color, padding: "1.2rem" }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
     "div",
     {
@@ -1814,13 +1815,36 @@ function ColorsGrid() {
     }
   ) }, key));
 }
+
+// src/components/TokensGrid/TokensGrid.tsx
+var import_jsx_runtime3 = require("react/jsx-runtime");
+function TokensGrid({ tokens, hasRemValue = false }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("table", { className: "tokens-grid", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("thead", { children: /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("tr", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("th", { children: "Name" }),
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("th", { children: "Value" }),
+      hasRemValue && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("th", { children: "Pixels" })
+    ] }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("tbody", { children: Object.entries(tokens).map(([key, value]) => {
+      return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("tr", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("td", { children: key }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("td", { children: value }),
+        hasRemValue && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("td", { children: [
+          Number(value.replace("rem", "")) * 16,
+          "px"
+        ] })
+      ] }, key);
+    }) })
+  ] });
+}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Box,
   Button,
   ColorsGrid,
   Header,
-  Text
+  Text,
+  TokensGrid
 });
 /*! Bundled license information:
 

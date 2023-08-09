@@ -1777,7 +1777,7 @@ function getContrast(color1, color2) {
 // src/components/ColorsGrid/ColorsGrid.tsx
 import { jsx as jsx2, jsxs as jsxs2 } from "react/jsx-runtime";
 function ColorsGrid() {
-  const constrast = (color) => getContrast(color, "#FFF") < 3.5 ? "#000" : "#FFF";
+  const constrast = (color) => getContrast(color, "#FFF") < 3.5 ? colors.black : colors.white;
   return Object.entries(colors).map(([key, color]) => /* @__PURE__ */ jsx2("div", { style: { backgroundColor: color, padding: "1.2rem" }, children: /* @__PURE__ */ jsxs2(
     "div",
     {
@@ -1797,12 +1797,35 @@ function ColorsGrid() {
     }
   ) }, key));
 }
+
+// src/components/TokensGrid/TokensGrid.tsx
+import { jsx as jsx3, jsxs as jsxs3 } from "react/jsx-runtime";
+function TokensGrid({ tokens, hasRemValue = false }) {
+  return /* @__PURE__ */ jsxs3("table", { className: "tokens-grid", children: [
+    /* @__PURE__ */ jsx3("thead", { children: /* @__PURE__ */ jsxs3("tr", { children: [
+      /* @__PURE__ */ jsx3("th", { children: "Name" }),
+      /* @__PURE__ */ jsx3("th", { children: "Value" }),
+      hasRemValue && /* @__PURE__ */ jsx3("th", { children: "Pixels" })
+    ] }) }),
+    /* @__PURE__ */ jsx3("tbody", { children: Object.entries(tokens).map(([key, value]) => {
+      return /* @__PURE__ */ jsxs3("tr", { children: [
+        /* @__PURE__ */ jsx3("td", { children: key }),
+        /* @__PURE__ */ jsx3("td", { children: value }),
+        hasRemValue && /* @__PURE__ */ jsxs3("td", { children: [
+          Number(value.replace("rem", "")) * 16,
+          "px"
+        ] })
+      ] }, key);
+    }) })
+  ] });
+}
 export {
   Box,
   Button,
   ColorsGrid,
   Header,
-  Text
+  Text,
+  TokensGrid
 };
 /*! Bundled license information:
 

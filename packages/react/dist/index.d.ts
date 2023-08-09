@@ -642,4 +642,10 @@ interface TextProps extends ComponentProps<typeof Text> {
 
 declare function ColorsGrid(): react_jsx_runtime.JSX.Element[];
 
-export { Box, BoxProps, Button, ButtonProps, ColorsGrid, Header, Text, TextProps };
+interface TokensGridProps {
+    tokens: Record<string, string>;
+    hasRemValue?: boolean;
+}
+declare function TokensGrid({ tokens, hasRemValue }: TokensGridProps): react_jsx_runtime.JSX.Element;
+
+export { Box, BoxProps, Button, ButtonProps, ColorsGrid, Header, Text, TextProps, TokensGrid };
