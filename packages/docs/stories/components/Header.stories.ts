@@ -1,7 +1,7 @@
 import { Header } from '@dxwebster-ds/react'
 
 export default {
-  title: 'Example/Header',
+  title: 'Layout/Header',
   component: Header,
   tags: ['autodocs'],
   parameters: {

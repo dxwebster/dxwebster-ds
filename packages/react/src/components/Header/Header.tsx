@@ -36,17 +36,12 @@ const Header = ({ user, onLogin, onLogout, onCreateAccount }: any) => (
             <span className="welcome">
               Welcome, <b>{user.name}</b>!
             </span>
-            <Button size="small" onClick={onLogout} label="Log out" />
+            <Button variant='primary' value='Log out'/>
           </>
         ) : (
           <>
-            <Button size="small" onClick={onLogin} label="Log in" />
-            <Button
-              primary
-              size="small"
-              onClick={onCreateAccount}
-              label="Sign up"
-            />
+            <Button variant='secondary' value='Log in' />
+            <Button variant='secondary' value="Sign up" />
           </>
         )}
       </div>

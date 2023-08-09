@@ -1,48 +1,76 @@
-import { Button } from '@dxwebster-ds/react'
+import type { Meta, StoryObj } from '@storybook/react'
+import { Button, ButtonProps } from '@dxwebster-ds/react'
+// import { ArrowRight } from 'phosphor-react'
 
 export default {
-  title: 'Example/Button',
+  title: 'Form/Button',
   component: Button,
   parameters: {
-    layout: 'centered',
+    layout: 'centered', // posição no canvas
   },
-  tags: ['autodocs'],
+  args: {
+    children: 'Send',
+    variant: 'primary',
+    size: 'md',
+    disabled: false,
+  },
   argTypes: {
-    backgroundColor: { control: 'color' },
+    variant: {
+      options: ['primary', 'secondary', 'tertiary'],
+      control: {
+        type: 'inline-radio',
+      },
+    },
+    size: {
+      options: ['sm', 'md'],
+      control: {
+        type: 'inline-radio',
+      },
+    },
+    disabled: {
+      control: {
+        type: 'boolean',
+      },
+    },
+    onClick: { action: 'clicked' },
+  },
+} as Meta<ButtonProps>
+
+export const Primary: StoryObj<ButtonProps> = {}
+
+export const Secondary: StoryObj<ButtonProps> = {
+  args: {
+    variant: 'secondary',
+    children: 'Create new',
   },
 }
 
-export const Primary = {
+export const Tertiary: StoryObj<ButtonProps> = {
   args: {
-    primary: true,
-    label: 'Button',
+    variant: 'tertiary',
+    children: 'Cancel',
   },
 }
 
-export const Secondary = {
+export const Small: StoryObj<ButtonProps> = {
   args: {
-    label: 'Button',
+    size: 'sm',
   },
 }
 
-export const Large = {
-  args: {
-    size: 'large',
-    label: 'Button',
-  },
-}
+// export const WithIcon: StoryObj<ButtonProps> = {
+//   args: {
+//     children: (
+//       <>
+//         Próximo passo
+//         <ArrowRight weight="bold" />
+//       </>
+//     ),
+//   },
+// }
 
-export const Small = {
+export const Disabled: StoryObj<ButtonProps> = {
   args: {
-    size: 'small',
-    label: 'Button',
-  },
-}
-
-export const Warning = {
-  args: {
-    primary: true,
-    label: 'Delete now',
-    backgroundColor: 'red',
+    disabled: true,
   },
 }

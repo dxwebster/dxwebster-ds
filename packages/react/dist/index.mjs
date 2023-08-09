@@ -21,18 +21,6 @@ var __spreadValues = (a, b) => {
   return a;
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-var __objRest = (source, exclude) => {
-  var target = {};
-  for (var prop in source)
-    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
-      target[prop] = source[prop];
-  if (source != null && __getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(source)) {
-      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
-        target[prop] = source[prop];
-    }
-  return target;
-};
 var __commonJS = (cb, mod) => function __require() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
 };
@@ -1116,42 +1104,87 @@ var Box = styled("div", {
 Box.displayName = "Box";
 
 // src/components/Button/Button.tsx
-var import_prop_types = __toESM(require_prop_types());
-import { jsx } from "react/jsx-runtime";
-var Button = (_a) => {
-  var _b = _a, { primary, backgroundColor, size, label } = _b, props = __objRest(_b, ["primary", "backgroundColor", "size", "label"]);
-  const mode = primary ? "storybook-button--primary" : "storybook-button--secondary";
-  return /* @__PURE__ */ jsx(
-    "button",
-    __spreadProps(__spreadValues({
-      type: "button",
-      className: ["storybook-button", `storybook-button--${size}`, mode].join(" "),
-      style: backgroundColor && { backgroundColor }
-    }, props), {
-      children: label
-    })
-  );
-};
-Button.propTypes = {
-  primary: import_prop_types.default.bool,
-  backgroundColor: import_prop_types.default.string,
-  size: import_prop_types.default.oneOf(["small", "medium", "large"]),
-  label: import_prop_types.default.string.isRequired,
-  onClick: import_prop_types.default.func
-};
-Button.defaultProps = {
-  backgroundColor: null,
-  primary: false,
-  size: "medium",
-  onClick: void 0
-};
+var Button = styled("button", {
+  all: "unset",
+  borderRadius: "$sm",
+  fontSize: "$sm",
+  fontWeight: "$medium",
+  fontFamily: "$default",
+  textAlign: "center",
+  minWidth: 120,
+  boxSizing: "border-box",
+  padding: "0 $4",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: "$2",
+  cursor: "pointer",
+  svg: {
+    width: "$4",
+    height: "$4"
+  },
+  "&:disabled": {
+    cursor: "not-allowed"
+  },
+  "&:focus": {
+    boxShadow: "0 0 0 2px $colors$gray100"
+  },
+  variants: {
+    variant: {
+      primary: {
+        color: "$white",
+        background: "$ignite500",
+        "&:not(:disabled):hover": {
+          background: "$ignite300"
+        },
+        "&:disabled": {
+          backgroundColor: "$gray200"
+        }
+      },
+      secondary: {
+        color: "$ignite300",
+        border: "2px solid $ignite500",
+        "&:not(:disabled):hover": {
+          background: "$ignite500",
+          color: "$white"
+        },
+        "&:disabled": {
+          color: "$gray200",
+          borderColor: "$gray200"
+        }
+      },
+      tertiary: {
+        color: "$gray100",
+        "&:not(:disabled):hover": {
+          color: "$white"
+        },
+        "&:disabled": {
+          color: "$gray600"
+        }
+      }
+    },
+    size: {
+      sm: {
+        height: 38
+      },
+      md: {
+        height: 46
+      }
+    }
+  },
+  defaultVariants: {
+    variant: "primary",
+    size: "md"
+  }
+});
+Button.displayName = "Button";
 
 // src/components/Header/Header.tsx
-var import_prop_types2 = __toESM(require_prop_types());
-import { Fragment, jsx as jsx2, jsxs } from "react/jsx-runtime";
-var Header = ({ user, onLogin, onLogout, onCreateAccount }) => /* @__PURE__ */ jsx2("header", { children: /* @__PURE__ */ jsxs("div", { className: "storybook-header", children: [
+var import_prop_types = __toESM(require_prop_types());
+import { Fragment, jsx, jsxs } from "react/jsx-runtime";
+var Header = ({ user, onLogin, onLogout, onCreateAccount }) => /* @__PURE__ */ jsx("header", { children: /* @__PURE__ */ jsxs("div", { className: "storybook-header", children: [
   /* @__PURE__ */ jsxs("div", { children: [
-    /* @__PURE__ */ jsx2(
+    /* @__PURE__ */ jsx(
       "svg",
       {
         width: "32",
@@ -1159,21 +1192,21 @@ var Header = ({ user, onLogin, onLogout, onCreateAccount }) => /* @__PURE__ */ j
         viewBox: "0 0 32 32",
         xmlns: "http://www.w3.org/2000/svg",
         children: /* @__PURE__ */ jsxs("g", { fill: "none", fillRule: "evenodd", children: [
-          /* @__PURE__ */ jsx2(
+          /* @__PURE__ */ jsx(
             "path",
             {
               d: "M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z",
               fill: "#FFF"
             }
           ),
-          /* @__PURE__ */ jsx2(
+          /* @__PURE__ */ jsx(
             "path",
             {
               d: "M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z",
               fill: "#555AB9"
             }
           ),
-          /* @__PURE__ */ jsx2(
+          /* @__PURE__ */ jsx(
             "path",
             {
               d: "M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z",
@@ -1183,35 +1216,27 @@ var Header = ({ user, onLogin, onLogout, onCreateAccount }) => /* @__PURE__ */ j
         ] })
       }
     ),
-    /* @__PURE__ */ jsx2("h1", { children: "Acme" })
+    /* @__PURE__ */ jsx("h1", { children: "Acme" })
   ] }),
-  /* @__PURE__ */ jsx2("div", { children: user ? /* @__PURE__ */ jsxs(Fragment, { children: [
+  /* @__PURE__ */ jsx("div", { children: user ? /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs("span", { className: "welcome", children: [
       "Welcome, ",
-      /* @__PURE__ */ jsx2("b", { children: user.name }),
+      /* @__PURE__ */ jsx("b", { children: user.name }),
       "!"
     ] }),
-    /* @__PURE__ */ jsx2(Button, { size: "small", onClick: onLogout, label: "Log out" })
+    /* @__PURE__ */ jsx(Button, { variant: "primary", value: "Log out" })
   ] }) : /* @__PURE__ */ jsxs(Fragment, { children: [
-    /* @__PURE__ */ jsx2(Button, { size: "small", onClick: onLogin, label: "Log in" }),
-    /* @__PURE__ */ jsx2(
-      Button,
-      {
-        primary: true,
-        size: "small",
-        onClick: onCreateAccount,
-        label: "Sign up"
-      }
-    )
+    /* @__PURE__ */ jsx(Button, { variant: "secondary", value: "Log in" }),
+    /* @__PURE__ */ jsx(Button, { variant: "secondary", value: "Sign up" })
   ] }) })
 ] }) });
 Header.propTypes = {
-  user: import_prop_types2.default.shape({
-    name: import_prop_types2.default.string.isRequired
+  user: import_prop_types.default.shape({
+    name: import_prop_types.default.string.isRequired
   }),
-  onLogin: import_prop_types2.default.func.isRequired,
-  onLogout: import_prop_types2.default.func.isRequired,
-  onCreateAccount: import_prop_types2.default.func.isRequired
+  onLogin: import_prop_types.default.func.isRequired,
+  onLogout: import_prop_types.default.func.isRequired,
+  onCreateAccount: import_prop_types.default.func.isRequired
 };
 Header.defaultProps = {
   user: null

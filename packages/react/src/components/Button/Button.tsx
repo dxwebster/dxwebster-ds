@@ -1,37 +1,100 @@
-import PropTypes from 'prop-types'
-import './button.css'
+import { styled } from '../../styles'
+import { ComponentProps, ElementType } from 'react'
 
-const Button = ({primary, backgroundColor, size, label, ...props }: any) => {
-  const mode = primary
-    ? 'storybook-button--primary'
-    : 'storybook-button--secondary'
-  
+export const Button = styled('button', {
+  all: 'unset',
+  borderRadius: '$sm',
+  fontSize: '$sm',
+  fontWeight: '$medium',
+  fontFamily: '$default',
+  textAlign: 'center',
+  minWidth: 120,
+  boxSizing: 'border-box',
+  padding: '0 $4',
 
-  return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={backgroundColor && { backgroundColor }}
-      {...props}
-    >
-      {label}
-    </button>
-  )
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: '$2',
+
+  cursor: 'pointer',
+
+  svg: {
+    width: '$4',
+    height: '$4',
+  },
+
+  '&:disabled': {
+    cursor: 'not-allowed',
+  },
+
+  '&:focus': {
+    boxShadow: '0 0 0 2px $colors$gray100',
+  },
+
+  variants: {
+    variant: {
+      primary: {
+        color: '$white',
+        background: '$ignite500',
+
+        '&:not(:disabled):hover': {
+          background: '$ignite300',
+        },
+
+        '&:disabled': {
+          backgroundColor: '$gray200',
+        },
+      },
+
+      secondary: {
+        color: '$ignite300',
+        border: '2px solid $ignite500',
+
+        '&:not(:disabled):hover': {
+          background: '$ignite500',
+          color: '$white',
+        },
+
+        '&:disabled': {
+          color: '$gray200',
+          borderColor: '$gray200',
+        },
+      },
+
+      tertiary: {
+        color: '$gray100',
+
+        '&:not(:disabled):hover': {
+          color: '$white',
+        },
+
+        '&:disabled': {
+          color: '$gray600',
+        },
+      },
+    },
+
+    size: {
+      sm: {
+        height: 38,
+      },
+
+      md: {
+        height: 46,
+      },
+    },
+  },
+
+  defaultVariants: {
+    variant: 'primary',
+    size: 'md',
+  },
+})
+
+// ComponentProps extrai quais props um component recebe nativamente
+export interface ButtonProps extends ComponentProps<typeof Button> {
+  as?: ElementType
 }
 
-export { Button }
-
-Button.propTypes = {
-  primary: PropTypes.bool,
-  backgroundColor: PropTypes.string,
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  label: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
-}
-
-Button.defaultProps = {
-  backgroundColor: null,
-  primary: false,
-  size: 'medium',
-  onClick: undefined,
-}
+Button.displayName = 'Button'

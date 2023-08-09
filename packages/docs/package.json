@@ -29,7 +29,8 @@
     "dependencies": {
     "@dxwebster-ds/react": "*",
     "@dxwebster-ds/tokens": "*",
-    "@dxwebster-ds/configs": "*",
+    "@dxwebster-ds/ts-config": "*",
+    "@dxwebster-ds/config-eslint": "*",
     "@storybook/addon-a11y": "^6.5.12",
     "phosphor-react": "^1.4.1",
     "polished": "^4.2.2",

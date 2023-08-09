@@ -1,4 +1,4 @@
 {
-  "extends": "@dxwebster-ds/configs/ts/base.json",
+  "extends": "@dxwebster-ds/ts-config/base.json",
   "include": ["src"]
 }
