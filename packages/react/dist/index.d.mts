@@ -16,11 +16,10 @@ declare const Box: _stitches_react_types_styled_component.StyledComponent<"div",
         gray700: string;
         gray800: string;
         gray900: string;
-        ignite300: string;
-        ignite500: string;
-        ignite700: string;
-        ignite900: string;
-        test: string;
+        webster300: string;
+        webster500: string;
+        webster700: string;
+        webster900: string;
     };
     fontSizes: {
         xxs: string;
@@ -29,13 +28,13 @@ declare const Box: _stitches_react_types_styled_component.StyledComponent<"div",
         md: string;
         lg: string;
         xl: string;
-        "2xl": string;
-        "4xl": string;
-        "5xl": string;
-        "6xl": string;
-        "7xl": string;
-        "8xl": string;
-        "9xl": string;
+        '2xl': string;
+        '4xl': string;
+        '5xl': string;
+        '6xl': string;
+        '7xl': string;
+        '8xl': string;
+        '9xl': string;
     };
     fontWeights: {
         regular: string;
@@ -226,11 +225,10 @@ declare const Button: _stitches_react_types_styled_component.StyledComponent<"bu
         gray700: string;
         gray800: string;
         gray900: string;
-        ignite300: string;
-        ignite500: string;
-        ignite700: string;
-        ignite900: string;
-        test: string;
+        webster300: string;
+        webster500: string;
+        webster700: string;
+        webster900: string;
     };
     fontSizes: {
         xxs: string;
@@ -239,13 +237,13 @@ declare const Button: _stitches_react_types_styled_component.StyledComponent<"bu
         md: string;
         lg: string;
         xl: string;
-        "2xl": string;
-        "4xl": string;
-        "5xl": string;
-        "6xl": string;
-        "7xl": string;
-        "8xl": string;
-        "9xl": string;
+        '2xl': string;
+        '4xl': string;
+        '5xl': string;
+        '6xl': string;
+        '7xl': string;
+        '8xl': string;
+        '9xl': string;
     };
     fontWeights: {
         regular: string;
@@ -448,11 +446,10 @@ declare const Text: _stitches_react_types_styled_component.StyledComponent<"p", 
         gray700: string;
         gray800: string;
         gray900: string;
-        ignite300: string;
-        ignite500: string;
-        ignite700: string;
-        ignite900: string;
-        test: string;
+        webster300: string;
+        webster500: string;
+        webster700: string;
+        webster900: string;
     };
     fontSizes: {
         xxs: string;
@@ -461,13 +458,13 @@ declare const Text: _stitches_react_types_styled_component.StyledComponent<"p", 
         md: string;
         lg: string;
         xl: string;
-        "2xl": string;
-        "4xl": string;
-        "5xl": string;
-        "6xl": string;
-        "7xl": string;
-        "8xl": string;
-        "9xl": string;
+        '2xl': string;
+        '4xl': string;
+        '5xl': string;
+        '6xl': string;
+        '7xl': string;
+        '8xl': string;
+        '9xl': string;
     };
     fontWeights: {
         regular: string;
@@ -643,4 +640,6 @@ interface TextProps extends ComponentProps<typeof Text> {
     as?: ElementType;
 }
 
-export { Box, BoxProps, Button, ButtonProps, Header, Text, TextProps };
+declare function ColorsGrid(): react_jsx_runtime.JSX.Element[];
+
+export { Box, BoxProps, Button, ButtonProps, ColorsGrid, Header, Text, TextProps };
