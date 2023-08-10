@@ -417,13 +417,16 @@ declare const StyledButton: _stitches_react_types_styled_component.StyledCompone
 
 interface ButtonProps extends ComponentProps<typeof StyledButton> {
     as?: ElementType;
+    children: React.ReactNode;
+    variant: 'primary' | 'secondary' | 'tertiary';
+    onClick: () => void;
 }
 declare const Button: {
     ({ children, ...props }: ButtonProps): react_jsx_runtime.JSX.Element;
     displayName: string;
 };
 
-interface HeaderGridProps {
+interface HeaderProps {
     user: {
         name: string;
     };
@@ -431,7 +434,7 @@ interface HeaderGridProps {
     onLogout: () => void;
     onCreateAccount: () => void;
 }
-declare const Header: ({ user, onLogin, onLogout, onCreateAccount, }: HeaderGridProps) => react_jsx_runtime.JSX.Element;
+declare function Header({ user, onLogin, onLogout, onCreateAccount, }: HeaderProps): void;
 
 declare const Text: _stitches_react_types_styled_component.StyledComponent<"p", {}, {}, _stitches_react_types_css_util.CSS<{}, {
     colors: {
@@ -647,4 +650,4 @@ interface TokensGridProps {
 }
 declare function TokensGrid({ tokens, hasRemValue }: TokensGridProps): react_jsx_runtime.JSX.Element;
 
-export { Box, BoxProps, Button, ButtonProps, ColorsGrid, Header, Text, TextProps, TokensGrid };
+export { Box, BoxProps, Button, ButtonProps, ColorsGrid, Header, HeaderProps, Text, TextProps, TokensGrid };

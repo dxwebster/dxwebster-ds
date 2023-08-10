@@ -1,4 +1,5 @@
-import { Header } from '@dxwebster-ds/react'
+import { Header, HeaderProps } from '@dxwebster-ds/react'
+import { Meta, StoryObj } from '@storybook/react'
 
 export default {
   title: 'Layout/Header',
@@ -7,9 +8,9 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
-}
+} as Meta<HeaderProps>
 
-export const LoggedIn = {
+export const LoggedIn: StoryObj<HeaderProps> = {
   args: {
     user: {
       name: 'Jane Doe',
@@ -17,4 +18,4 @@ export const LoggedIn = {
   },
 }
 
-export const LoggedOut = {}
+export const LoggedOut: StoryObj<HeaderProps> = {}

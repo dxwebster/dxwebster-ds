@@ -1,7 +1,7 @@
 import { StyledHeader } from './styles'
 import { Button } from '../Button'
 
-interface HeaderGridProps {
+export interface HeaderProps {
   user: {
     name: string
   }
@@ -10,13 +10,13 @@ interface HeaderGridProps {
   onCreateAccount: () => void
 }
 
-const Header = ({
+export function Header({
   user,
   onLogin,
   onLogout,
   onCreateAccount,
-}: HeaderGridProps) => (
-  <StyledHeader>
+}: HeaderProps) {
+  ;<StyledHeader>
     <div>
       <svg
         width="32"
@@ -66,6 +66,4 @@ const Header = ({
       )}
     </div>
   </StyledHeader>
-)
-
-export { Header }
+}
