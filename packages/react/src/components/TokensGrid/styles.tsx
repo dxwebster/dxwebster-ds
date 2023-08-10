@@ -15,20 +15,10 @@ export const StyledTokensGrid = styled('table', {
   '& tbody td': {
     padding: '0.75rem 1rem',
     color: '#ccc',
-
-    '&:first-child': {
-      borderTopLeftRadius: '8px',
-      borderBottomLeftRadius: '8px',
-    },
-
-    '&:last-child': {
-      borderTopRightRadius: '8px',
-      borderBottomRightRadius: '8px',
-    },
   },
 
   '& tbody tr:nth-child(even) td': {
-    background: '#444',
+    background: '#dfdfdf',
   },
 
   variants: {

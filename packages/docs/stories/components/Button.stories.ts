@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button, ButtonProps } from '@dxwebster-ds/react'
-// import { ArrowRight } from 'phosphor-react'
 
 export default {
   title: 'Form/Button',
   component: Button,
+  tags: ['autodocs'],
   parameters: {
     layout: 'centered', // posição no canvas
   },
@@ -57,17 +57,6 @@ export const Small: StoryObj<ButtonProps> = {
     size: 'sm',
   },
 }
-
-// export const WithIcon: StoryObj<ButtonProps> = {
-//   args: {
-//     children: (
-//       <>
-//         Próximo passo
-//         <ArrowRight weight="bold" />
-//       </>
-//     ),
-//   },
-// }
 
 export const Disabled: StoryObj<ButtonProps> = {
   args: {

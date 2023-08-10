@@ -2,7 +2,6 @@ import * as _stitches_react_types_styled_component from '@stitches/react/types/s
 import * as _stitches_react_types_css_util from '@stitches/react/types/css-util';
 import { ComponentProps, ElementType } from 'react';
 import * as react_jsx_runtime from 'react/jsx-runtime';
-import PropTypes from 'prop-types';
 
 declare const Box: _stitches_react_types_styled_component.StyledComponent<"div", {}, {}, _stitches_react_types_css_util.CSS<{}, {
     colors: {
@@ -210,7 +209,7 @@ interface BoxProps extends ComponentProps<typeof Box> {
     as?: ElementType;
 }
 
-declare const Button: _stitches_react_types_styled_component.StyledComponent<"button", {
+declare const StyledButton: _stitches_react_types_styled_component.StyledComponent<"button", {
     variant?: "primary" | "secondary" | "tertiary" | undefined;
     size?: "sm" | "md" | undefined;
 }, {}, _stitches_react_types_css_util.CSS<{}, {
@@ -415,24 +414,24 @@ declare const Button: _stitches_react_types_styled_component.StyledComponent<"bu
     transition: "transitions";
     zIndex: "zIndices";
 }, {}>>;
-interface ButtonProps extends ComponentProps<typeof Button> {
+
+interface ButtonProps extends ComponentProps<typeof StyledButton> {
     as?: ElementType;
 }
-
-declare const Header: {
-    ({ user, onLogin, onLogout, onCreateAccount }: any): react_jsx_runtime.JSX.Element;
-    propTypes: {
-        user: PropTypes.Requireable<PropTypes.InferProps<{
-            name: PropTypes.Validator<string>;
-        }>>;
-        onLogin: PropTypes.Validator<(...args: any[]) => any>;
-        onLogout: PropTypes.Validator<(...args: any[]) => any>;
-        onCreateAccount: PropTypes.Validator<(...args: any[]) => any>;
-    };
-    defaultProps: {
-        user: null;
-    };
+declare const Button: {
+    ({ children, ...props }: ButtonProps): react_jsx_runtime.JSX.Element;
+    displayName: string;
 };
+
+interface HeaderGridProps {
+    user: {
+        name: string;
+    };
+    onLogin: () => void;
+    onLogout: () => void;
+    onCreateAccount: () => void;
+}
+declare const Header: ({ user, onLogin, onLogout, onCreateAccount, }: HeaderGridProps) => react_jsx_runtime.JSX.Element;
 
 declare const Text: _stitches_react_types_styled_component.StyledComponent<"p", {}, {}, _stitches_react_types_css_util.CSS<{}, {
     colors: {
