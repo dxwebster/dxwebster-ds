@@ -1,4 +1,4 @@
-import { styled } from '../../styles'
+import { styled } from '@/styles/custom'
 
 export const StyledHeader = styled('header', {
   fontFamily: 'sans-serif',
@@ -24,7 +24,7 @@ export const StyledHeader = styled('header', {
     marginLeft: '1rem',
   },
   '& .welcome': {
-    colorq: '#333',
+    color: '#333',
     fontSize: '0.875rem',
     marginRight: '1rem',
   },

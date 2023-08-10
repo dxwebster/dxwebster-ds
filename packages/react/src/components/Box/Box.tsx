@@ -1,6 +1,6 @@
 import { ComponentProps, ElementType } from 'react'
 
-import { styled } from '../../styles'
+import { styled } from '../../styles/custom'
 
 // usa a function styled() que retorna os tokens configurados pelo stitches
 const Box = styled('div', {

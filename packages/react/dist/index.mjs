@@ -110,7 +110,7 @@ var lineHeights = {
   tall: "180%"
 };
 
-// src/styles/index.ts
+// src/styles/custom.ts
 import { createStitches, defaultThemeMap } from "@stitches/react";
 var themeStitches = {
   colors,
@@ -127,7 +127,6 @@ var themeMapStitches = __spreadProps(__spreadValues({}, defaultThemeMap), {
 });
 var {
   styled,
-  // styled() - function para estilizar novos componentes
   css,
   globalCss,
   keyframes,
@@ -202,16 +201,16 @@ var StyledButton = styled("button", {
           color: "$white"
         },
         "&:disabled": {
-          color: "$gray600"
+          color: "$gray200"
         }
       }
     },
     size: {
       sm: {
-        height: 38
+        height: "$6"
       },
       md: {
-        height: 46
+        height: "$8"
       }
     }
   },
@@ -253,7 +252,7 @@ var StyledHeader = styled("header", {
     marginLeft: "1rem"
   },
   "& .welcome": {
-    colorq: "#333",
+    color: "#333",
     fontSize: "0.875rem",
     marginRight: "1rem"
   }

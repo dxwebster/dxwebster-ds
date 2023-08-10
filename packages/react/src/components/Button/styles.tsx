@@ -1,4 +1,4 @@
-import { styled } from '../../styles'
+import { styled } from '@/styles/custom'
 
 export const StyledButton = styled('button', {
   all: 'unset',
@@ -69,17 +69,16 @@ export const StyledButton = styled('button', {
         },
 
         '&:disabled': {
-          color: '$gray600',
+          color: '$gray200',
         },
       },
     },
     size: {
       sm: {
-        height: 38,
+        height: '$6',
       },
-
       md: {
-        height: 46,
+        height: '$8',
       },
     },
   },

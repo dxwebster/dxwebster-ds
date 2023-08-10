@@ -30,7 +30,7 @@ const themeMapStitches = {
 }
 
 export const {
-  styled, // styled() - function para estilizar novos componentes
+  styled,
   css,
   globalCss,
   keyframes,
