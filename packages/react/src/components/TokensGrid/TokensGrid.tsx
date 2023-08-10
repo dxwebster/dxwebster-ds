@@ -1,4 +1,4 @@
-import './styles.css'
+import { StyledTokensGrid } from './styles'
 
 interface TokensGridProps {
   tokens: Record<string, string>
@@ -7,7 +7,7 @@ interface TokensGridProps {
 
 export function TokensGrid({ tokens, hasRemValue = false }: TokensGridProps) {
   return (
-    <table className="tokens-grid">
+    <StyledTokensGrid hasRemValue={hasRemValue}>
       <thead>
         <tr>
           <th>Name</th>
@@ -29,6 +29,6 @@ export function TokensGrid({ tokens, hasRemValue = false }: TokensGridProps) {
           )
         })}
       </tbody>
-    </table>
+    </StyledTokensGrid>
   )
 }

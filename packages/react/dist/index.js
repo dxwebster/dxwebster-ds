@@ -1816,10 +1816,51 @@ function ColorsGrid() {
   ) }, key));
 }
 
+// src/components/TokensGrid/styles.tsx
+var import_react2 = require("@stitches/react");
+var StyledTokensGrid = (0, import_react2.styled)("table", {
+  width: "100%",
+  fontFamily: "sans-serif",
+  color: "#FFF",
+  borderCollapse: "collapse",
+  border: "none",
+  "& thead th": {
+    padding: "0.75rem 1rem",
+    textAlign: "left"
+  },
+  "& tbody td": {
+    padding: "0.75rem 1rem",
+    color: "#ccc",
+    "&:first-child": {
+      borderTopLeftRadius: "8px",
+      borderBottomLeftRadius: "8px"
+    },
+    "&:last-child": {
+      borderTopRightRadius: "8px",
+      borderBottomRightRadius: "8px"
+    }
+  },
+  "& tbody tr:nth-child(even) td": {
+    background: "#444"
+  },
+  variants: {
+    hasRemValue: {
+      true: {
+        "& td:last-child": {
+          display: "table-cell"
+        }
+      }
+    }
+  },
+  defaultVariants: {
+    hasRemValue: false
+  }
+});
+
 // src/components/TokensGrid/TokensGrid.tsx
 var import_jsx_runtime3 = require("react/jsx-runtime");
 function TokensGrid({ tokens, hasRemValue = false }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("table", { className: "tokens-grid", children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(StyledTokensGrid, { hasRemValue, children: [
     /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("thead", { children: /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("tr", { children: [
       /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("th", { children: "Name" }),
       /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("th", { children: "Value" }),
