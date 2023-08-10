@@ -1,0 +1,35 @@
+name: Deploy docs
+
+# vai executar toda vez que houver um push na branch main
+on:
+  push: # evento que vai disparar o workflow
+    branches: # lista de branches que vão disparar o workflow
+      - main
+      # daria também para fazer com que execute apenas quando houver uma tag de release. ex:
+      # tags:
+      #   - v*
+
+# lista de jobs que serão executados
+jobs:
+  build-and-deploy: # nome do job
+    runs-on: ubuntu-latest # sistema operacional que será executado
+    steps: # lista de passos que serão executados
+      - name: 1 - Checkout
+        uses: actions/checkout@v3 # ação que será executada
+
+      - name: 2 - Setup Node.js
+        uses: actions/setup-node@v3 # ação que será executada
+        with: # configurações da ação
+          node-version: 18 # versão do node que será instalada
+
+      - name: 3 - Install dependencies
+        run: npm ci # instala as dependências do projeto (sem atualizar as versões)
+
+      - name: 4 - Build
+        run: npm run build # builda o projeto
+
+      - name: 5 - Deploy storybook
+        working-directory: ./packages/docs # entre nesse diretório
+        run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static # faz o deploy do storybook
+        env: # variáveis de ambiente que serão passadas
+          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }} # token de acesso ao github
