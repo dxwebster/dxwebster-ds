@@ -69,3 +69,6 @@ export function Header({
     </StyledHeader>
   )
 }
+
+
+Header.displayName = 'Header'

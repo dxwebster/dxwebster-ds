@@ -1,7 +1,7 @@
 import { colors } from '@dxwebster-ds/tokens'
 import { getContrast } from 'polished'
 
-function ColorsGrid() {
+export function ColorsGrid() {
   const constrast = (color: string) =>
     getContrast(color, '#FFF') < 3.5 ? colors.black : colors.white
 
@@ -21,4 +21,5 @@ function ColorsGrid() {
     </div>
   ))
 }
-export { ColorsGrid }
+
+ColorsGrid.displayName = 'ColorsGrid'
