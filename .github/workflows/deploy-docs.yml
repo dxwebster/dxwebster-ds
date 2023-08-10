@@ -14,21 +14,21 @@ jobs:
   build-and-deploy: # nome do job
     runs-on: ubuntu-latest # sistema operacional que será executado
     steps: # lista de passos que serão executados
-      - name: 1 - Checkout
+      - name: Checkout
         uses: actions/checkout@v3 # ação que será executada
 
-      - name: 2 - Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3 # ação que será executada
         with: # configurações da ação
           node-version: 18 # versão do node que será instalada
 
-      - name: 3 - Install dependencies
+      - name: Install dependencies
         run: npm ci # instala as dependências do projeto (sem atualizar as versões)
 
-      - name: 4 - Build
+      - name: Build
         run: npm run build # builda o projeto
 
-      - name: 5 - Deploy storybook
+      - name: Deploy storybook
         working-directory: ./packages/docs # entre nesse diretório
         run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static # faz o deploy do storybook
         env: # variáveis de ambiente que serão passadas
