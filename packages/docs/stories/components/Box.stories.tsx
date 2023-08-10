@@ -6,6 +6,7 @@ import { Box, TextProps, Text } from '@dxwebster-ds/react'
 export default {
   title: 'Layout/Box',
   component: Box,
+  parameters: { layout: 'centered' },
   tags: ['autodocs'],
   args: {
     children: <Text>Testando o elemento Box</Text>,

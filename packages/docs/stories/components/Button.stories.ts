@@ -4,35 +4,43 @@ import { Button, ButtonProps } from '@dxwebster-ds/react'
 export default {
   title: 'Form/Button',
   component: Button,
+  parameters: { layout: 'centered' },
   tags: ['autodocs'],
-  parameters: {
-    layout: 'centered', // posição no canvas
-  },
+
+  // declaração das props padrão do componente e seus valores
   args: {
     children: 'Send',
     variant: 'primary',
     size: 'md',
     disabled: false,
   },
+
+  // configuração dos controles das props padrão do componente
   argTypes: {
     variant: {
-      options: ['primary', 'secondary', 'tertiary'],
+      // prop variant
+      options: ['primary', 'secondary', 'tertiary'], // possíveis opções
       control: {
-        type: 'inline-radio',
+        type: 'inline-radio', // forma de controle (dropdown, radio, etc)
       },
     },
     size: {
+      // prop size
       options: ['sm', 'md'],
       control: {
         type: 'inline-radio',
       },
     },
     disabled: {
+      // prop disabled
       control: {
         type: 'boolean',
       },
     },
-    onClick: { action: 'clicked' },
+    onClick: {
+      // prop onClick
+      action: 'clicked', // ativa log de ação no console
+    },
   },
 } as Meta<ButtonProps>
 
