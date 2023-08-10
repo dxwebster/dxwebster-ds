@@ -902,8 +902,7 @@ function ColorsGrid() {
 }
 
 // src/components/TokensGrid/styles.tsx
-var import_react2 = require("@stitches/react");
-var StyledTokensGrid = (0, import_react2.styled)("table", {
+var StyledTokensGrid = styled("table", {
   width: "100%",
   fontFamily: "sans-serif",
   color: "#FFF",
