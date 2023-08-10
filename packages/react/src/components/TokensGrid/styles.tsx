@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react'
+import { styled } from '../../styles/custom'
 
 export const StyledTokensGrid = styled('table', {
   width: '100%',

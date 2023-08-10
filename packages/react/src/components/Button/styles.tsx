@@ -1,4 +1,4 @@
-import { styled } from '@/styles/custom'
+import { styled } from '../../styles/custom'
 
 export const StyledButton = styled('button', {
   all: 'unset',

@@ -1,4 +1,4 @@
-import { styled } from '@/styles/custom'
+import { styled } from '../../styles/custom'
 
 export const StyledHeader = styled('header', {
   fontFamily: 'sans-serif',
