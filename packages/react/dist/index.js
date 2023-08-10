@@ -294,8 +294,7 @@ function Header({
   onLogout,
   onCreateAccount
 }) {
-  ;
-  /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(StyledHeader, { children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(StyledHeader, { children: [
     /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { children: [
       /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
         "svg",

@@ -434,7 +434,7 @@ interface HeaderProps {
     onLogout: () => void;
     onCreateAccount: () => void;
 }
-declare function Header({ user, onLogin, onLogout, onCreateAccount, }: HeaderProps): void;
+declare function Header({ user, onLogin, onLogout, onCreateAccount, }: HeaderProps): react_jsx_runtime.JSX.Element;
 
 declare const Text: _stitches_react_types_styled_component.StyledComponent<"p", {}, {}, _stitches_react_types_css_util.CSS<{}, {
     colors: {
